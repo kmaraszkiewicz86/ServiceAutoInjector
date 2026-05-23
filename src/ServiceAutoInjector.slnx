@@ -1,0 +1,8 @@
+<Solution>
+  <Folder Name="/DemoApps/">
+    <Project Path="Demo/ServiceAutoInjector.Demo.ConsoleApp/ServiceAutoInjector.Demo.ConsoleApp.csproj" Id="45ec5d7e-0d39-481a-92e3-437bdcff29ce" />
+  </Folder>
+  <Project Path="Implementation/ServiceAutoInjector/ServiceAutoInjector.csproj" />
+  <Project Path="Shared/ServiceAutoInjector.Interfaces/ServiceAutoInjector.Interfaces.csproj" Id="d1a9b4a4-329b-4e44-9eaa-d28e0c26ee4d" />
+  <Project Path="Shared/ServiceAutoInjector.Logic/ServiceAutoInjector.Logic.csproj" />
+</Solution>
