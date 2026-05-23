@@ -4,7 +4,7 @@ using ServiceAutoInjector.Demo.Extensions;
 using ServiceAutoInjector.Interfaces;
 using ServiceAutoInjector.Logic;
 
-Console.WriteLine("Hello, World!");
+Console.WriteLine("Demo of ServiceAutoInjector:");
 
 
 var hostWithManualyCreatedServices = Host.CreateDefaultBuilder(args)
