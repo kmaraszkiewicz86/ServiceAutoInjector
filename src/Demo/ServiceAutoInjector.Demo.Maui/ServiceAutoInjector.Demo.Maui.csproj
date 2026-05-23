@@ -76,4 +76,8 @@
 	  <ProjectReference Include="..\..\Shared\ServiceAutoInjector.Logic\ServiceAutoInjector.Logic.csproj" />
 	</ItemGroup>
 
+	<ItemGroup>
+	  <Folder Include="ViewModels\" />
+	</ItemGroup>
+
 </Project>
