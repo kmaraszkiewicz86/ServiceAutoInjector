@@ -10,10 +10,10 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="10.0.8" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="10.0.8" />
-    <PackageReference Include="ServiceAutoInjector" Version="1.0.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Implementation\ServiceAutoInjector\ServiceAutoInjector.csproj" />
     <ProjectReference Include="..\..\Shared\ServiceAutoInjector.Interfaces\ServiceAutoInjector.Interfaces.csproj" />
     <ProjectReference Include="..\..\Shared\ServiceAutoInjector.Logic\ServiceAutoInjector.Logic.csproj" />
   </ItemGroup>

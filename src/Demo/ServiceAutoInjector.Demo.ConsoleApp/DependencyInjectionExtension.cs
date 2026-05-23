@@ -22,8 +22,8 @@ namespace ServiceAutoInjector.Demo.Extensions
 
             public IServiceCollection AddRequiredServicesByServiceAutoInjector()
             {
-                services.AddClassesToDependencyInjection(typeof(IService));
-                services.AddClassesToDependencyInjection(typeof(IOtherProjectService), null, typeof(FurnitureService).Assembly);
+                services.AddClassesToDependencyInjection(typeof(IService), serviceLifetime: ServiceLifetime.Transient);
+                services.AddClassesToDependencyInjection(typeof(IOtherProjectService), null, typeof(FurnitureService).Assembly, ServiceLifetime.Transient);
 
                 return services;
             }

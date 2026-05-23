@@ -1,7 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using System.Diagnostics;
 using System.Reflection;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace ServiceAutoInjector
 {
@@ -9,7 +8,19 @@ namespace ServiceAutoInjector
     {
         extension(IServiceCollection services) 
         {
-            public IServiceCollection AddClassesToDependencyInjection(Type globalInterfaceType, Assembly? assembly = null, Assembly? implementationAssembly = null)
+            /// <summary>
+            /// Add classes to dependency injection
+            /// </summary>
+            /// <param name="globalInterfaceType">The global interface type</param>
+            /// <param name="assembly">The assembly to search for implementations</param>
+            /// <param name="implementationAssembly">The assembly containing implementation types</param>
+            /// <param name="serviceLifetime">The lifetime of the service</param>
+            /// <returns>The updated service collection</returns>
+            public IServiceCollection AddClassesToDependencyInjection(
+                Type globalInterfaceType,
+                Assembly? assembly = null,
+                Assembly? implementationAssembly = null,
+                ServiceLifetime serviceLifetime = ServiceLifetime.Scoped)
             {
                 assembly ??= globalInterfaceType.Assembly;
 
@@ -42,14 +53,15 @@ namespace ServiceAutoInjector
                         classes = [.. classes, .. classesFromImplementationAssembly];
                     }
 
-                    if (classes.Length == 0) {
+                    if (classes.Length == 0)
+                    {
                         Debug.WriteLine($"Skipping {interfaceType.FullName} because it doesn't implement any implementation classes.");
                         continue;
                     }
 
                     foreach (Type implementationType in classes)
                     {
-                        services.AddTransient(interfaceType, implementationType);
+                        services.Add(new ServiceDescriptor(interfaceType, implementationType, serviceLifetime));
                     }
                 }
 
