@@ -23,7 +23,7 @@ namespace ServiceAutoInjector.Demo.Extensions
             public IServiceCollection AddRequiredServicesByServiceAutoInjector()
             {
                 services.AddClassesToDependencyInjection(typeof(IService));
-                services.AddClassesToDependencyInjection(typeof(IOtherService));
+                services.AddClassesToDependencyInjection(typeof(IOtherProjectService), null, typeof(FurnitureService).Assembly);
 
                 return services;
             }

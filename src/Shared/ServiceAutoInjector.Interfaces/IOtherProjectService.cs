@@ -1,6 +1,6 @@
 ﻿namespace ServiceAutoInjector.Interfaces
 {
-    public interface IOtherService
+    public interface IOtherProjectService
     {
     }
 }
