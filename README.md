@@ -50,7 +50,7 @@ Gdzie:
   <img width="207" height="143" alt="image" src="https://github.com/user-attachments/assets/4e7583d2-75e0-4f13-8c95-cec2a613e99e" />
 
 
-#Tworzenie paczki nuget lokalnie i używanie jej w środowisku Visual Studio:
+#Tworzenie paczki nuget
 
 Aby wygenerować paczkę nuget, wystarczy przejść do głównego folderu projektu gdzie znajduje się plik *.sln i wykonać komendę lub możemy posłużyć się Visula Studio jak poniżej:
 
@@ -65,6 +65,40 @@ dotnet build -c Release ; dotnet pack -c Release
 Pierwsza komenda zbuduję projekt a druga utworzy paczkę nuget
 
 <img width="931" height="139" alt="image" src="https://github.com/user-attachments/assets/b1f14ad2-84be-4f9b-9f9e-a27301450204" />
+
+#Stworzenie lokalnego repositorium nuget
+
+1. Pierwszą rzeczą jaką należy zrobić jest stworzenie folderu na dysku lokalnym i utworzenie folderu gdzie wrzucimy paczkę nuget. Ja utworzyłem sobie folder: R:\LocalNugets. Natomiast można stworzyć folder gdziekolwiek na dysku np C:\LocalNugets w zależności od preferencji
+2. Następnie koppiujemy paczkę z folderu: \bin\Release
+   <img width="657" height="135" alt="image" src="https://github.com/user-attachments/assets/eac02ff3-c564-4e44-a1b1-d05d61c68d9a" />
+3. Przenosimy paczkę do stworzonego folderu:
+   <img width="833" height="209" alt="image" src="https://github.com/user-attachments/assets/a8e5c4ac-b5f6-415a-81f3-8829f7a614f3" />
+5. Następnie za pomocą Visual Studio można stworzyć konfigurację przechodząc Tools -> Options:
+   <img width="649" height="625" alt="image" src="https://github.com/user-attachments/assets/a99f916d-7327-41a6-8ab0-c83e5c7e41f8" />
+   oraz wybierając: All Settings -> NuGet Package Manager -> Sources
+   <img width="1154" height="998" alt="image" src="https://github.com/user-attachments/assets/edc01bdc-5614-4fac-8448-440bce148369" />
+6. Następnie klikamy w przycisk Add
+   <img width="860" height="406" alt="image" src="https://github.com/user-attachments/assets/4c3a4872-15a8-4c10-aa6b-fe95a15b7d14" />
+7. Dodajemy lokalizację folderu w oknie Source:
+  <img width="1684" height="902" alt="image" src="https://github.com/user-attachments/assets/8abbb163-6cc9-4dd8-9823-dc7f93b2eec1" />
+8. Oraz nazywamy żródło paczek i kilkamy na Save
+9. Po tej operacji przechodząc do zarządzani paczkami w danym projekcie:
+<img width="473" height="798" alt="image" src="https://github.com/user-attachments/assets/4c5e6ce0-259b-4818-a02c-16260dcbc538" />
+
+9.Można wybrać źródło:
+<img width="630" height="227" alt="image" src="https://github.com/user-attachments/assets/42de1296-bcb3-4079-a27d-20d272688a32" />
+
+Zaznaczając widzimy że mamy tylko jedną paczkę, którą dodaliśmy:
+<img width="1876" height="324" alt="image" src="https://github.com/user-attachments/assets/cbdeb6cc-a738-47fb-a5c4-736a733153a2" />
+
+Tak o to dodaliśmy do swojego projektu własną lokalną paczkę nuget.
+
+
+
+
+
+   
+
 
 
 
