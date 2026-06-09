@@ -94,6 +94,42 @@ Zaznaczając widzimy że mamy tylko jedną paczkę, którą dodaliśmy:
 Tak o to dodaliśmy do swojego projektu własną lokalną paczkę nuget.
 
 
+#Wstrzykiwanie paczki do repositorium nuget.org
+1. Przed dalszą drogą należy stworzyć konto, na którym bedziemy publikować paczkę. Robimy to tutaj: https://www.nuget.org/ i przechodzimy do <img width="133" height="44" alt="image" src="https://github.com/user-attachments/assets/4af2fc08-d631-4c5e-ab81-16b2e8af2179" /> oraz <img width="512" height="206" alt="image" src="https://github.com/user-attachments/assets/7b922911-9841-455e-ab3d-12e9f27bc8b7" /> i logujemy się na istniejące konto microsoft albo tworzymy nowe
+2. Następnie udajemy się do API Keys: <img width="1597" height="526" alt="image" src="https://github.com/user-attachments/assets/1939e752-1f3f-4b05-97f3-ac7c90706926" />
+3. Dla naszego przypadku, gdy nie używamy Github Action i użyjemy cmd należy kliknąc również w link Api keys:
+   <img width="1218" height="144" alt="image" src="https://github.com/user-attachments/assets/6fc6ceb0-1cde-4bdb-b2e0-d1b6e1716317" />
+4.Klikamy na Create
+3. Uzupełniamy dane: 
+<img width="1268" height="1037" alt="image" src="https://github.com/user-attachments/assets/27f035c5-302e-4615-adbc-0c06b69cdda7" />
+Ja w celach testowych utworzę token, wygasający po 1 dniu:
+<img width="1185" height="1004" alt="image" src="https://github.com/user-attachments/assets/10f2ba90-b266-4f40-a1de-c152317ae5d3" />
+Kopiujemy token:
+<img width="1318" height="352" alt="image" src="https://github.com/user-attachments/assets/c2e2b924-34d9-4e54-a820-b7085293c56f" />
+Oraz przechodzimy do terminala i przechodzimy do lokalizacji paczki nuget, u mnie: R:\RepoGit\ServiceAutoInjector\src\Implementation\ServiceAutoInjector\bin\Release oraz wpisujemy komendę:
+
+```
+dotnet nuget push moja-paczka.nupkg --api-key TWÓJ_KLUCZ --source https://api.nuget.org/v3/index.json
+```
+
+Czyli w moim przypadku:
+
+```
+dotnet nuget push ServiceAutoInjector.1.0.0.nupkg --api-key oy2h6q4dut4wqjoyokya3o6ohgovfxoureslu4u4ycao4a --source https://api.nuget.org/v3/index.json
+```
+Po wykonaniu komendy otrzymamy:
+<img width="1153" height="379" alt="image" src="https://github.com/user-attachments/assets/70cf2883-cee0-4cad-b7b4-f65b47bbfe96" />
+Następnie trzeba poczkeać aż paczka zostanie uwzględniona w wyszukiwaniach. Aktualnie na stronie paczkie w nuget.org można zauważyć:
+<img width="1250" height="923" alt="image" src="https://github.com/user-attachments/assets/5fcbfc75-ebd9-4d57-baf7-abb3f808a00c" />
+
+
+
+
+
+
+
+
+
 
 
 
