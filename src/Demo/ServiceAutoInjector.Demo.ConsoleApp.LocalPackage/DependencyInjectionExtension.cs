@@ -1,9 +1,8 @@
 ﻿using ServiceAutoInjector.Interfaces;
 using ServiceAutoInjector.Logic;
-using ServiceAutoInjector;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace ServiceAutoInjector.Demo.Extensions
+namespace ServiceAutoInjector.Demo.ConsoleApp.LocalPackage
 {
     public static class DependencyInjectionExtension
     {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using ServiceAutoInjector.Demo.Extensions;
+using ServiceAutoInjector.Demo.ConsoleApp.LocalPackage;
 using ServiceAutoInjector.Interfaces;
 using ServiceAutoInjector.Logic;
 
