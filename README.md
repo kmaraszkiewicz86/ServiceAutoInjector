@@ -122,6 +122,34 @@ Po wykonaniu komendy otrzymamy:
 Następnie trzeba poczkeać aż paczka zostanie uwzględniona w wyszukiwaniach. Aktualnie na stronie paczkie w nuget.org można zauważyć:
 <img width="1250" height="923" alt="image" src="https://github.com/user-attachments/assets/5fcbfc75-ebd9-4d57-baf7-abb3f808a00c" />
 
+Aktualnie link do paczki znajduję się na tej stronie:
+https://www.nuget.org/packages/ServiceAutoInjector/
+
+Teraz po wybraniu: Prawy klik na nazwe solucji -> Manage NuGet Package:
+<img width="495" height="329" alt="image" src="https://github.com/user-attachments/assets/22b4bd67-e657-4752-9621-c79a8fdbffef" />
+Możemy wyszukać paczkę z nuget.org i dodać ją do swojego projektu.
+
+<img width="1843" height="564" alt="image" src="https://github.com/user-attachments/assets/f7d90cfc-3783-4ff0-bf07-a097665a72a8" />
+
+Jak widzimy paczka nie posiada odpowiedeniej metody ze względu na fakt że wersja z tą metodą nie została jeszcze dodana:
+<img width="1224" height="154" alt="image" src="https://github.com/user-attachments/assets/53d104d7-6c93-486a-830c-590c2b301b26" />
+
+# Update package version:
+<img width="540" height="153" alt="image" src="https://github.com/user-attachments/assets/fb628711-8a4f-493e-b9d2-edc8d60783e6" />
+
+
+<img width="875" height="200" alt="image" src="https://github.com/user-attachments/assets/56e0e760-65b3-4af2-b3fd-2e580036f8bc" />
+
+<img width="652" height="81" alt="image" src="https://github.com/user-attachments/assets/d40c6820-a985-4f88-85c6-cade213b2c0c" />
+
+<img width="1148" height="240" alt="image" src="https://github.com/user-attachments/assets/77d408b0-bf97-4993-a2e1-433db1409de3" />
+
+
+
+```
+ dotnet nuget push ServiceAutoInjector.1.0.1.nupkg --api-key oy2aja7ssaozrylw44zqc24fplwsjhduzphibijpbgbvwe --source https://api.nuget.org/v3/index.json
+```
+
 
 
 
