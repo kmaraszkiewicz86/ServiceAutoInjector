@@ -6,8 +6,8 @@
 		<Nullable>enable</Nullable>
 
 		<!-- NuGet Package Properties -->
-		<PackageId>kmaraszkiewicz86.ServiceAutoInjector</PackageId>
-		<Version>1.0.0</Version>
+		<PackageId>ServiceAutoInjector</PackageId>
+		<Version>1.0.1</Version>
 		<Authors>Krzysztof Maraszkiewicz</Authors>
 		<Description>ServiceAutoInjector is a .NET 10 library that automates Dependency Injection. By scanning assemblies for marker interfaces, it instantly registers classes as transient, scoped, or singleton services. Eliminate boilerplate code, streamline startup, and easily maintain clean architecture in your .NET projects.</Description>
 		<PackageTags>dependency-injection;di;net10;extensions;autoregister</PackageTags>
