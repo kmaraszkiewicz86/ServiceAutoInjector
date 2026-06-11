@@ -135,20 +135,35 @@ Jak widzimy paczka nie posiada odpowiedeniej metody ze względu na fakt że wers
 <img width="1224" height="154" alt="image" src="https://github.com/user-attachments/assets/53d104d7-6c93-486a-830c-590c2b301b26" />
 
 # Update package version:
+
+Aby zaktualizować paczkę wystarczy zmienić numer wersji w pliku csproj projektu jak poniżej
 <img width="540" height="153" alt="image" src="https://github.com/user-attachments/assets/fb628711-8a4f-493e-b9d2-edc8d60783e6" />
 
+Oraz wygenerować paczkę komendami:
 
 <img width="875" height="200" alt="image" src="https://github.com/user-attachments/assets/56e0e760-65b3-4af2-b3fd-2e580036f8bc" />
 
+Zostanie wygenerowana paczka
+
 <img width="652" height="81" alt="image" src="https://github.com/user-attachments/assets/d40c6820-a985-4f88-85c6-cade213b2c0c" />
 
-<img width="1148" height="240" alt="image" src="https://github.com/user-attachments/assets/77d408b0-bf97-4993-a2e1-433db1409de3" />
-
-
+, którą możemy wypchnąć do repo NuGet za pomocą komendy:
 
 ```
  dotnet nuget push ServiceAutoInjector.1.0.1.nupkg --api-key oy2aja7ssaozrylw44zqc24fplwsjhduzphibijpbgbvwe --source https://api.nuget.org/v3/index.json
 ```
+
+<img width="1148" height="240" alt="image" src="https://github.com/user-attachments/assets/77d408b0-bf97-4993-a2e1-433db1409de3" />
+
+Aktualnie można przejść do zarządzania paczkami w w projekcie i zaktualizować paczkę jak poniżej:
+
+<img width="1840" height="763" alt="image" src="https://github.com/user-attachments/assets/7547587f-b25c-4de3-9418-4c0a89c9ee16" />
+
+Co naprawi problem z brakiem parametrów:
+
+<img width="1188" height="149" alt="image" src="https://github.com/user-attachments/assets/44cc6655-7e7d-4482-8420-9779c6c9b983" />
+
+
 
 
 
