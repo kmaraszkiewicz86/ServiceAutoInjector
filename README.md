@@ -8,13 +8,15 @@ ServiceAutoInjector is a .NET 10 library that automates Dependency Injection. By
 
 ## Wstęp
 
-W tym artykule pokazuję, jak skorzystać z nuget.org oraz narzędzi .NET CLI, aby wygenerować paczkę NuGet zawierającą prostą bibliotekę. Celem jest uproszczenie rejestracji usług, tak aby zamiast ręcznego definiowania wielu linii z interfejsem i klasą implementującą:
+W tym artykule pokazuję, jak stworzyć własną bibliotekę .NET, przygotować ją do dystrybucji jako paczkę NuGet, przetestować ją lokalnie oraz opublikować na nuget.org z wykorzystaniem narzędzi .NET CLI. Celem jest uproszczenie rejestracji usług, tak aby zamiast ręcznego definiowania wielu linii z interfejsem i klasą implementującą:
 
 <img width="632" height="180" alt="image" src="https://github.com/user-attachments/assets/92cc0154-c8c3-4404-84a8-16f4b65c4ecb" />
 
 otrzymać prostsze rozwiązanie:
 
 <img width="928" height="140" alt="image" src="https://github.com/user-attachments/assets/7e367607-e806-4eef-9796-8173655b4018" />
+
+W dalszej części artykułu wykorzystamy prostą bibliotekę ServiceAutoInjector jako przykład do pokazania całego procesu tworzenia i publikacji własnej paczki NuGet. Celem artykułu nie jest szczegółowe omówienie mechanizmu refleksji ani Dependency Injection, lecz przedstawienie kompletnego procesu przygotowania i publikacji własnej paczki NuGet.
 
 Wyszukiwanie interfejsów i klas odbywa się za pomocą refleksji w .NET. Sama implementacja biblioteki jest bardzo prosta:
 
@@ -57,11 +59,15 @@ Gdzie:
 - `PackageLicenseExpression` - licencja paczki,
 - `PackageReadmeFile` - plik dokumentacji README, który musi być dodany do projektu:
 
+Poniżej widać odpowiedni wpis w projekcie:
+
 <img width="207" height="143" alt="image" src="https://github.com/user-attachments/assets/4e7583d2-75e0-4f13-8c95-cec2a613e99e" />
 
 ## Tworzenie paczki NuGet
 
 Aby wygenerować paczkę NuGet, przechodzimy do głównego folderu projektu (tam, gdzie znajduje się plik .sln) i wykonujemy komendę. Można też użyć Visual Studio:
+
+Poniżej widać tę operację w Visual Studio:
 
 <img width="455" height="886" alt="image" src="https://github.com/user-attachments/assets/23daa58a-9f09-4eea-9285-b5a3c4e327f7" />
 
@@ -73,6 +79,8 @@ dotnet build -c Release ; dotnet pack -c Release
 
 Pierwsza komenda buduje projekt, a druga tworzy paczkę NuGet.
 
+Poniżej pokazano wynik działania tych poleceń:
+
 <img width="931" height="139" alt="image" src="https://github.com/user-attachments/assets/b1f14ad2-84be-4f9b-9f9e-a27301450204" />
 
 ## Stworzenie lokalnego repozytorium NuGet
@@ -80,38 +88,56 @@ Pierwsza komenda buduje projekt, a druga tworzy paczkę NuGet.
 1. Tworzymy folder na dysku lokalnym, do którego wrzucimy paczkę NuGet. U mnie jest to `R:\LocalNugets`, ale może to być np. `C:\LocalNugets`.
 2. Kopiujemy paczkę z folderu `\bin\Release`.
 
+	Poniżej widać paczkę w folderze wyjściowym.
+
 	<img width="657" height="135" alt="image" src="https://github.com/user-attachments/assets/eac02ff3-c564-4e44-a1b1-d05d61c68d9a" />
 
 3. Przenosimy paczkę do utworzonego folderu.
+
+	Poniżej pokazano paczkę po przeniesieniu.
 
 	<img width="833" height="209" alt="image" src="https://github.com/user-attachments/assets/a8e5c4ac-b5f6-415a-81f3-8829f7a614f3" />
 
 4. W Visual Studio przechodzimy do `Tools -> Options`:
 
+	Poniżej widać to okno ustawień.
+
 	<img width="649" height="625" alt="image" src="https://github.com/user-attachments/assets/a99f916d-7327-41a6-8ab0-c83e5c7e41f8" />
 
 	Następnie wybieramy `All Settings -> NuGet Package Manager -> Sources`:
+
+	Poniżej pokazano sekcję źródeł NuGet.
 
 	<img width="1154" height="998" alt="image" src="https://github.com/user-attachments/assets/edc01bdc-5614-4fac-8448-440bce148369" />
 
 5. Klikamy `Add`.
 
+	Poniżej pokazano przycisk dodawania źródła.
+
 	<img width="860" height="406" alt="image" src="https://github.com/user-attachments/assets/4c3a4872-15a8-4c10-aa6b-fe95a15b7d14" />
 
 6. Dodajemy lokalizację folderu w polu `Source`.
+
+	Poniżej widać uzupełnione pole źródła.
 
 	<img width="1684" height="902" alt="image" src="https://github.com/user-attachments/assets/8abbb163-6cc9-4dd8-9823-dc7f93b2eec1" />
 
 7. Nadajemy nazwę źródłu i klikamy `Save`.
 8. Po tej operacji, w zarządzaniu paczkami w projekcie:
 
+	Poniżej pokazano widok zarządzania paczkami.
+
 	<img width="473" height="798" alt="image" src="https://github.com/user-attachments/assets/4c5e6ce0-259b-4818-a02c-16260dcbc538" />
 
 9. Możemy wybrać źródło:
 
+	Poniżej widać wybór źródła pakietów.
+
 	<img width="630" height="227" alt="image" src="https://github.com/user-attachments/assets/42de1296-bcb3-4079-a27d-20d272688a32" />
 
 Po zaznaczeniu widzimy jedną paczkę, którą dodaliśmy:
+
+Poniżej pokazano paczkę dostępną w lokalnym źródle.
 
 <img width="1876" height="324" alt="image" src="https://github.com/user-attachments/assets/cbdeb6cc-a738-47fb-a5c4-736a733153a2" />
 
@@ -122,9 +148,13 @@ W ten sposób dodaliśmy do projektu własną lokalną paczkę NuGet.
 1. Na początek trzeba utworzyć konto, z którego będziemy publikować paczkę: https://www.nuget.org/.
 	Następnie przechodzimy do:
 
+	Poniżej pokazano link do logowania.
+
 	<img width="133" height="44" alt="image" src="https://github.com/user-attachments/assets/4af2fc08-d631-4c5e-ab81-16b2e8af2179" />
 
 	oraz:
+
+	Poniżej widać ekran logowania.
 
 	<img width="512" height="206" alt="image" src="https://github.com/user-attachments/assets/7b922911-9841-455e-ab3d-12e9f27bc8b7" />
 
@@ -132,22 +162,32 @@ W ten sposób dodaliśmy do projektu własną lokalną paczkę NuGet.
 
 2. Przechodzimy do `API Keys`:
 
+	Poniżej pokazano sekcję kluczy API.
+
 	<img width="1597" height="526" alt="image" src="https://github.com/user-attachments/assets/1939e752-1f3f-4b05-97f3-ac7c90706926" />
 
 3. Dla przypadku publikacji z terminala (`cmd` / .NET CLI) klikamy link `Api keys`:
+
+	Poniżej widać odpowiedni odnośnik.
 
 	<img width="1218" height="144" alt="image" src="https://github.com/user-attachments/assets/6fc6ceb0-1cde-4bdb-b2e0-d1b6e1716317" />
 
 4. Klikamy `Create`.
 5. Uzupełniamy dane:
 
+	Poniżej pokazano formularz tworzenia klucza.
+
 	<img width="1268" height="1037" alt="image" src="https://github.com/user-attachments/assets/27f035c5-302e-4615-adbc-0c06b69cdda7" />
 
 	W celach testowych można utworzyć token wygasający np. po 1 dniu:
 
+	Poniżej widać ustawienie daty wygaśnięcia.
+
 	<img width="1185" height="1004" alt="image" src="https://github.com/user-attachments/assets/10f2ba90-b266-4f40-a1de-c152317ae5d3" />
 
 6. Kopiujemy token:
+
+	Poniżej pokazano wygenerowany token.
 
 	<img width="1318" height="352" alt="image" src="https://github.com/user-attachments/assets/c2e2b924-34d9-4e54-a820-b7085293c56f" />
 
@@ -165,9 +205,13 @@ dotnet nuget push ServiceAutoInjector.1.0.0.nupkg --api-key TWOJ_KLUCZ --source 
 
 Po wykonaniu komendy otrzymamy:
 
+Poniżej pokazano wynik publikacji paczki.
+
 <img width="1153" height="379" alt="image" src="https://github.com/user-attachments/assets/70cf2883-cee0-4cad-b7b4-f65b47bbfe96" />
 
 Następnie trzeba poczekać, aż paczka zostanie uwzględniona w wyszukiwaniach. Na stronie paczki w nuget.org może to wyglądać tak:
+
+Poniżej widać stronę opublikowanej paczki.
 
 <img width="1250" height="923" alt="image" src="https://github.com/user-attachments/assets/5fcbfc75-ebd9-4d57-baf7-abb3f808a00c" />
 
@@ -176,13 +220,19 @@ https://www.nuget.org/packages/ServiceAutoInjector/
 
 Teraz po wybraniu `Prawy klik na nazwę solucji -> Manage NuGet Package`:
 
+Poniżej pokazano tę opcję w Visual Studio.
+
 <img width="495" height="329" alt="image" src="https://github.com/user-attachments/assets/22b4bd67-e657-4752-9621-c79a8fdbffef" />
 
 możemy wyszukać paczkę z nuget.org i dodać ją do projektu.
 
+Poniżej widać paczkę dostępną w nuget.org.
+
 <img width="1843" height="564" alt="image" src="https://github.com/user-attachments/assets/f7d90cfc-3783-4ff0-bf07-a097665a72a8" />
 
 Jak widać, paczka może nie posiadać odpowiedniej metody, jeśli wersja z tą metodą nie została jeszcze opublikowana:
+
+Poniżej pokazano przykład takiej sytuacji.
 
 <img width="1224" height="154" alt="image" src="https://github.com/user-attachments/assets/53d104d7-6c93-486a-830c-590c2b301b26" />
 
@@ -190,13 +240,19 @@ Jak widać, paczka może nie posiadać odpowiedniej metody, jeśli wersja z tą 
 
 Aby zaktualizować paczkę, wystarczy zmienić numer wersji w pliku .csproj, np.:
 
+Poniżej widać zmianę numeru wersji.
+
 <img width="540" height="153" alt="image" src="https://github.com/user-attachments/assets/fb628711-8a4f-493e-b9d2-edc8d60783e6" />
 
 Następnie ponownie wygenerować paczkę:
 
+Poniżej pokazano ponowne wygenerowanie paczki.
+
 <img width="875" height="200" alt="image" src="https://github.com/user-attachments/assets/56e0e760-65b3-4af2-b3fd-2e580036f8bc" />
 
 Zostanie wygenerowana nowa paczka:
+
+Poniżej widać nowo wygenerowaną paczkę.
 
 <img width="652" height="81" alt="image" src="https://github.com/user-attachments/assets/d40c6820-a985-4f88-85c6-cade213b2c0c" />
 
@@ -206,13 +262,19 @@ którą możemy wypchnąć do NuGet komendą:
 dotnet nuget push ServiceAutoInjector.1.0.1.nupkg --api-key TWOJ_KLUCZ --source https://api.nuget.org/v3/index.json
 ```
 
+Poniżej pokazano wynik publikacji nowej wersji.
+
 <img width="1148" height="240" alt="image" src="https://github.com/user-attachments/assets/77d408b0-bf97-4993-a2e1-433db1409de3" />
 
 Następnie w zarządzaniu paczkami projektu można wykonać aktualizację:
 
+Poniżej widać dostępność aktualizacji w projekcie.
+
 <img width="1840" height="763" alt="image" src="https://github.com/user-attachments/assets/7547587f-b25c-4de3-9418-4c0a89c9ee16" />
 
 To rozwiązuje problem z brakującymi parametrami:
+
+Poniżej pokazano efekt po aktualizacji.
 
 <img width="1188" height="149" alt="image" src="https://github.com/user-attachments/assets/44cc6655-7e7d-4482-8420-9779c6c9b983" />
 
