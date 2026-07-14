@@ -2,6 +2,8 @@
 
 ServiceAutoInjector is a .NET 10 library that automates Dependency Injection. By scanning assemblies for marker interfaces, it can register classes as transient, scoped, or singleton services. This helps reduce boilerplate, simplify startup configuration, and keep architecture clean in .NET projects.
 
+#Tworzenie i publikacja własnej paczki NuGet w .NET 10 – krok po kroku
+
 ## Opis problemu (wersja PL)
 
 ## Wstęp
@@ -213,3 +215,6 @@ Następnie w zarządzaniu paczkami projektu można wykonać aktualizację:
 To rozwiązuje problem z brakującymi parametrami:
 
 <img width="1188" height="149" alt="image" src="https://github.com/user-attachments/assets/44cc6655-7e7d-4482-8420-9779c6c9b983" />
+
+### Na koniec
+W tym artykule stworzyliśmy własną bibliotekę, wygenerowaliśmy paczkę NuGet, przetestowaliśmy ją lokalnie, opublikowaliśmy ją na nuget.org oraz pokazaliśmy, jak publikować kolejne wersje. Dzięki temu ten sam proces można wykorzystać do publikowania kolejnych bibliotek NuGet.
