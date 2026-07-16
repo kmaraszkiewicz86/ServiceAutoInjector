@@ -8,4 +8,4 @@ Soluction contains Implementation project:
 
 And the demo application to show how to use ServiceAutoInjectorExtension extension
 
-[Demo application](src/Demo/ServiceAutoInjector.Demo.ConsoleApp.NugetPackage/README.md)
+[Demo application](src/Demo/README.md)
