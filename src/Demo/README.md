@@ -2,4 +2,4 @@
 
 It's the `ServiceAutoInjector` demo application demonstrates how to use this `ServiceAutoInjector` library.
 
-Documetation for the you can see [here](../../Implementation/ServiceAutoInjector/README.md)
+Documetation for the you can see [here](https://github.com/kmaraszkiewicz86/ServiceAutoInjector/blob/main/README.md)
