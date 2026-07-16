@@ -6,14 +6,16 @@ using ServiceAutoInjector.Logic;
 
 Console.WriteLine("Demo of ServiceAutoInjector:");
 
-
-var hostWithManualyCreatedServices = Host.CreateDefaultBuilder(args)
+// Create a host with services registered manually.
+var hostWithManuallyCreatedServices = Host.CreateDefaultBuilder(args)
     .ConfigureServices((context, services) =>
     {
-        services.AddRequiredManualyServices();
+        services.AddRequiredManuallyServices();
     })
     .Build();
 
+// Create a host with services registered automatically
+// using the ServiceAutoInjector library.
 var hostWithAutomaticallyCreatedServices = Host.CreateDefaultBuilder(args)
     .ConfigureServices((context, services) =>
     {
@@ -21,7 +23,9 @@ var hostWithAutomaticallyCreatedServices = Host.CreateDefaultBuilder(args)
     })
     .Build();
 
-await RunServicesAsync(hostWithManualyCreatedServices.Services);
+// Resolve and execute services from both hosts
+// to compare the registration approaches.
+await RunServicesAsync(hostWithManuallyCreatedServices.Services);
 await RunServicesAsync(hostWithAutomaticallyCreatedServices.Services);
 
 static async Task RunServicesAsync(IServiceProvider serviceProvider)
