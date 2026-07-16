@@ -4,8 +4,8 @@
 
 Soluction contains Implementation project:
 
-[Implementation project](src/Implementation/ServiceAutoInjector/ServiceAutoInjector.csproj)
+[Implementation project](src/Implementation/ServiceAutoInjector/README.md)
 
 And the demo application to show how to use ServiceAutoInjectorExtension extension
 
-[Demo application](src/Demo/ServiceAutoInjector.Demo.ConsoleApp.NugetPackage/ServiceAutoInjector.Demo.ConsoleApp.NugetPackage.csproj)
+[Demo application](src/Demo/ServiceAutoInjector.Demo.ConsoleApp.NugetPackage/README.md)
