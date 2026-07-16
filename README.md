@@ -1,7 +1,3 @@
-# ServiceAutoInjector
-
-ServiceAutoInjector is a .NET 10 library that automates Dependency Injection. By scanning assemblies for marker interfaces, it can register classes as transient, scoped, or singleton services. This helps reduce boilerplate, simplify startup configuration, and keep architecture clean in .NET projects.
-
 # Tworzenie i publikacja własnej paczki NuGet w .NET 10 – krok po kroku
 
 ## Opis problemu (wersja PL)
