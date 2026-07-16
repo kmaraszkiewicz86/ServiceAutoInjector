@@ -1,6 +1,6 @@
 ﻿# ServiceAutoInjector
 
-`ServiceAutoInjector` is a `.NET 10` library for automatic Dependency Injection registration.
+`ServiceAutoInjector` is a .NET 10 library that automates Dependency Injection registration using marker interfaces.
 
 The library adds services to `IServiceCollection` by scanning assemblies for interfaces that inherit from a selected marker interface, and then finding concrete classes that implement those interfaces.
 
@@ -31,12 +31,18 @@ Scans for all interfaces in the specified assembly that implement the given glob
 - `assembly` - assembly to scan for matching interfaces. If not provided, `globalInterfaceType.Assembly` is used.
 - `implementationAssembly` - optional extra assembly containing implementation classes.
 - `serviceLifetime` - DI lifetime used during registration. Default: `Scoped`.
-
-
+  
 ## Installation
 
 Install the package with the .NET CLI: 
 ```bash
 dotnet add package ServiceAutoInjector --version 1.0.1
 ```
+
+## Demo
+
+The `ServiceAutoInjector.Demo.ConsoleApp` project demonstrates how to use the library. [Link](https://github.com/kmaraszkiewicz86/ServiceAutoInjector/blob/main/src/Demo/README.md)
+
+Example:
+[Example](https://github.com/kmaraszkiewicz86/ServiceAutoInjector/blob/main/src/Demo/ServiceAutoInjector.Demo.ConsoleApp.LocalPackage/Program.cs)
 
