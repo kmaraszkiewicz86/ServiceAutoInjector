@@ -4,12 +4,15 @@ using System.Reflection;
 
 namespace ServiceAutoInjector
 {
+    /// <summary>
+    /// Extension methods for IServiceCollection to automatically register services based on interfaces and their implementations.
+    /// </summary>
     public static class ServiceAutoInjectorExtension
     {
         extension(IServiceCollection services) 
         {
             /// <summary>
-            /// Add classes to dependency injection
+            /// Scans for all interfaces in the specified assembly that implement the given global interface type, and registers their implementations in the dependency injection container.
             /// </summary>
             /// <param name="globalInterfaceType">The global interface type</param>
             /// <param name="assembly">The assembly to search for implementations</param>
