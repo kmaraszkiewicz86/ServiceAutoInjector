@@ -151,33 +151,9 @@ W ten sposób dodaliśmy do projektu własną lokalną paczkę NuGet.
 
 ## Publikacja paczki do repozytorium nuget.org
 
-1. Na początek trzeba utworzyć konto, z którego będziemy publikować paczkę: https://www.nuget.org/.
-	Następnie przechodzimy do:
-
-	<img width="133" height="44" alt="image" src="https://github.com/user-attachments/assets/4af2fc08-d631-4c5e-ab81-16b2e8af2179" />
-
-	*Rys. 16. Link do logowania w serwisie nuget.org.*
-
-	oraz:
-
-	<img width="512" height="206" alt="image" src="https://github.com/user-attachments/assets/7b922911-9841-455e-ab3d-12e9f27bc8b7" />
-
-	*Rys. 17. Ekran logowania do nuget.org.*
-
-	i logujemy się na istniejące konto Microsoft albo tworzymy nowe.
-
-2. Przechodzimy do `API Keys`:
-
-	<img width="1597" height="526" alt="image" src="https://github.com/user-attachments/assets/1939e752-1f3f-4b05-97f3-ac7c90706926" />
-
-	*Rys. 18. Sekcja `API Keys` w koncie nuget.org.*
-
+1. Na początek trzeba zalogować się na konto microsoft, z którego będziemy publikować paczkę: https://www.nuget.org/.
+2. Przechodzimy do API Keys: https://www.nuget.org/account/apikeys?forceApiKeys=true
 3. Dla przypadku publikacji z terminala (`cmd` / .NET CLI) klikamy link `Api keys`:
-
-	<img width="1218" height="144" alt="image" src="https://github.com/user-attachments/assets/6fc6ceb0-1cde-4bdb-b2e0-d1b6e1716317" />
-
-	*Rys. 19. Odnośnik `Api keys` dla publikacji z terminala.*
-
 4. Klikamy `Create`.
 5. Uzupełniamy dane:
 
@@ -191,13 +167,13 @@ W ten sposób dodaliśmy do projektu własną lokalną paczkę NuGet.
 
 	*Rys. 21. Ustawienie daty wygaśnięcia tokenu.*
 
-6. Kopiujemy token:
+7. Kopiujemy token:
 
 	<img width="1318" height="352" alt="image" src="https://github.com/user-attachments/assets/c2e2b924-34d9-4e54-a820-b7085293c56f" />
 
 	*Rys. 22. Wygenerowany token API.*
 
-7. W terminalu przechodzimy do lokalizacji paczki NuGet (u mnie: `R:\RepoGit\ServiceAutoInjector\src\Implementation\ServiceAutoInjector\bin\Release`) i wykonujemy:
+8. W terminalu przechodzimy do lokalizacji paczki NuGet (u mnie: `R:\RepoGit\ServiceAutoInjector\src\Implementation\ServiceAutoInjector\bin\Release`) i wykonujemy:
 
 ```bash
 dotnet nuget push moja-paczka.nupkg --api-key TWOJ_KLUCZ --source https://api.nuget.org/v3/index.json
